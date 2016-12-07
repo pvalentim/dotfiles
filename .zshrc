@@ -38,9 +38,6 @@ export PATH=/Applications/MAMP/bin/php/php5.5.10/bin:$PATH
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# [ -s "/Users/pvalentim/.nvm/nvm.sh" ] && . "/Users/pvalentim/.nvm/nvm.sh" # This loads nvm
-alias lnvm='. ~/.nvm/nvm.sh'
-
 # Bower
 alias bower='noglob bower'
 
@@ -50,5 +47,16 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
+# Load NVM
+export NVM_LAZY_LOAD=true
+antigen bundle lukechilds/zsh-nvm
+
 # uncomment to finish profiling
 #zprof
+
+# Dokku
+alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
+# PRW Dokku Server
+alias prw='DOKKU_HOST=prd.prw.paas.impero.me dokku'
+alias stg='DOKKU_HOST=stg.paas.impero.me dokku'
+alias prd='DOKKU_HOST=prd.paas.impero.me dokku'
