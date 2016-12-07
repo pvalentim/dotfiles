@@ -9,7 +9,7 @@ SAVEHIST=100000
 # vim bindings
 bindkey -v
 
-source ~/Development/dotfiles/antigen/antigen.zsh
+source ~/dev/dotfiles/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -33,19 +33,15 @@ antigen apply
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH=/Applications/MAMP/bin/php/php5.5.10/bin:$PATH
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Bower
-alias bower='noglob bower'
-
 # virtualenvwrapper
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/Devel
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # Load NVM
 export NVM_LAZY_LOAD=true
