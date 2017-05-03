@@ -3,7 +3,6 @@ tap 'caskroom/versions'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/services'
-tap 'homebrew/versions'
 brew 'git'
 brew 'ffmpeg', args: ['with-libvpx']
 brew 'gdbm'
