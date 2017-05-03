@@ -18,12 +18,8 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle tmux
 
-# Syntax highlighting bundle.
-#antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Don't use a theme
-# antigen theme robbyrussell
-
+# Pure
+antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
 # Tell antigen that you're done.
@@ -54,5 +50,5 @@ antigen bundle lukechilds/zsh-nvm
 alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
 # PRW Dokku Server
 alias prw='DOKKU_HOST=prd.prw.paas.impero.me dokku'
-alias stg='DOKKU_HOST=stg.paas.impero.me dokku'
-alias prd='DOKKU_HOST=prd.paas.impero.me dokku'
+alias stg='DOKKU_HOST=stg.impero.me dokku'
+alias prd='DOKKU_HOST=prd.impero.me dokku'

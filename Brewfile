@@ -1,0 +1,53 @@
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'homebrew/services'
+tap 'homebrew/versions'
+brew 'git'
+brew 'ffmpeg', args: ['with-libvpx']
+brew 'gdbm'
+brew 'imagemagick'
+brew 'openssl'
+brew 'libevent'
+brew 'libyaml'
+brew 'mongodb', restart_service: true
+brew 'openssl@1.1'
+brew 'pcre'
+brew 'readline'
+brew 'python'
+brew 'tmux'
+brew 'watch'
+brew 'zsh'
+brew 'mas'
+brew 'vim'
+cask 'alfred'
+cask 'atom'
+cask 'beamer'
+cask 'caffeine'
+cask 'dash'
+cask 'docker'
+cask 'firefox'
+cask 'google-chrome'
+cask 'google-chrome-canary'
+cask 'google-cloud-sdk'
+cask 'imagealpha'
+cask 'imageoptim'
+cask 'iterm2'
+cask 'pgadmin3'
+cask 'robomongo'
+cask 'skype'
+cask 'slack'
+cask 'spotify'
+cask 'the-unarchiver'
+cask 'vagrant'
+cask 'virtualbox'
+cask 'vlc'
+cask 'webtorrent'
+mas '1Password', id: 443987910
+mas 'Better', id: 1121192229
+mas 'iA Writer', id: 775737590
+mas 'Sip', id: 507257563
+mas 'Slack', id: 803453959
+mas 'Tweetbot', id: 557168941
+mas 'Xcode', id: 497799835
