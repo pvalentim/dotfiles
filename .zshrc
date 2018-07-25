@@ -40,7 +40,7 @@ export LANG=en_US.UTF-8
 #source /usr/local/bin/virtualenvwrapper.sh
 
 # Load NVM
-export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=false
 antigen bundle lukechilds/zsh-nvm
 
 # uncomment to finish profiling
@@ -52,3 +52,8 @@ alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
 alias prw='DOKKU_HOST=prd.prw.paas.impero.me dokku'
 alias stg='DOKKU_HOST=stg.impero.me dokku'
 alias prd='DOKKU_HOST=prd.impero.me dokku'
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
