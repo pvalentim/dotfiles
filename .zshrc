@@ -22,9 +22,6 @@ antigen bundle tmux
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
-# Tell antigen that you're done.
-antigen apply
-
 #  Paths
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export PATH="/usr/local/sbin:$PATH"
@@ -43,6 +40,9 @@ export LANG=en_US.UTF-8
 export NVM_LAZY_LOAD=false
 antigen bundle lukechilds/zsh-nvm
 
+# Tell antigen that you're done.
+antigen apply
+
 # uncomment to finish profiling
 #zprof
 
@@ -57,3 +57,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Go
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
