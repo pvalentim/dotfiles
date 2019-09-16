@@ -47,11 +47,11 @@ antigen apply
 #zprof
 
 # Dokku
-alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
+#alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
 # PRW Dokku Server
-alias prw='DOKKU_HOST=prd.prw.paas.impero.me dokku'
-alias stg='DOKKU_HOST=stg.impero.me dokku'
-alias prd='DOKKU_HOST=prd.impero.me dokku'
+#alias prw='DOKKU_HOST=prd.prw.paas.impero.me dokku'
+#alias stg='DOKKU_HOST=stg.impero.me dokku'
+#alias prd='DOKKU_HOST=prd.impero.me dokku'
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -59,5 +59,5 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Go
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOPATH/bin
+#export GOPATH=$(go env GOPATH)
+#export PATH=$PATH:$GOPATH/bin
