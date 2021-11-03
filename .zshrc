@@ -1,84 +1,55 @@
 # .zshrc
 
 export EDITOR='vim'
-# uncomment to profile prompt startup with zprof
-#zmodload zsh/zprof
+export LS_COLORS="$(vivid generate snazzy)"
 
-# history
-SAVEHIST=100000
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt autocd beep extendedglob nomatch
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '~/.zshrc'
 
-# vim bindings
-bindkey -v
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+setopt append_history
+setopt share_history
 
-source ~/dev/dotfiles/antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle tmux
-antigen bundle tmuxinator
-
-# AWS
-AWS_CONFIG_FILE=~/.aws/config
-antigen bundle aws
-
-# Pure
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-
-#  Paths
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# zlib
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# virtualenvwrapper
-
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+# Load all files from .shell/zshrc.d directory
+if [ -d $HOME/.shellrc/zshrc.d ]; then
+  for file in $HOME/.shellrc/zshrc.d/*.zsh; do
+    source $file
+  done
 fi
 
-# Tell antigen that you're done.
-antigen apply
+# Start ssh agent
+if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
+    eval $(ssh-agent -s) > /dev/null
+    if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
+        # Auto-add ssh keys to your ssh agent
+        # Example:
+        # ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
+    fi
+fi
 
-# uncomment to finish profiling
-#zprof
+# Pure
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
 
-# Dokku
-#alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
-# PRW Dokku Server
-#alias prw='DOKKU_HOST=prd.prw.paas.impero.me dokku'
-#alias stg='DOKKU_HOST=stg.impero.me dokku'
-#alias prd='DOKKU_HOST=prd.impero.me dokku'
+# ls colors
+alias ls="gls --color"
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# fnm
+export PATH=/home/pedro/.fnm:$PATH
+eval "`fnm env`"
 
-# Go
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOPATH/bin
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
 
-# Yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# Fnm
-export PATH=/Users/pvalentim/.fnm/current/bin:$PATH
-export FNM_MULTISHELL_PATH=/Users/pvalentim/.fnm/current
-export FNM_DIR=/Users/pvalentim/.fnm
-export FNM_NODE_DIST_MIRROR=https://nodejs.org/dist
-export FNM_LOGLEVEL=info
+# Look so pretty
+neofetch
