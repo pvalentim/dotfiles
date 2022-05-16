@@ -1,3 +1,5 @@
+bindkey -e
+
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
   autoload -U up-line-or-beginning-search
   zle -N up-line-or-beginning-search
@@ -13,3 +15,6 @@ fi
 if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
 fi
+
+bindkey '^k' theme-dark
+bindkey '^l' theme-light

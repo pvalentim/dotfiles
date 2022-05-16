@@ -50,6 +50,9 @@ eval "`fnm env`"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 # Look so pretty
-neofetch
+# neofetch
+
